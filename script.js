@@ -11,13 +11,24 @@ function submitForm(event) {
 
 
 function generateQrCode(poemText, poemAuthor){
-  var baseUrl = window.location.hostname
   divId = document.getElementById("qrcode")
   divId.innerHTML = "" // resets div content before new generation
-  var urlWithParams = `${baseUrl}/index.html?poem=${poemText}&author=${poemAuthor}`
+  var baseUrl = generateUrl()
+  var urlWithParams = `${baseUrl}/index.html?poem=${poemText}&author=${poemAuthor}`.replaceAll(' ', '%20')
 
-  new QRCode(divId, { text: urlWithParams,  width: 128, height: 128});
-  console.log(urlWithParams)
+  new QRCode(divId, { text: urlWithParams,  width: 248, height: 248});
+  document.getElementById("qrcode-url").innerHTML = "QR Code URL"
+  document.getElementById("qrcode-url").href = urlWithParams
+}
+
+
+function generateUrl(){
+  var host = window.location.origin
+  var subpaths = window.location.pathname.split('/').slice(0,-1)
+  subpaths.forEach((x, i) => host = `${host}/${x}`)
+  host = host.replace(/([^:]\/)\/+/g, "$1");
+
+  return host
 }
 
 function displayPoem(){
