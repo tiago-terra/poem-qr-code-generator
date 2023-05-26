@@ -4,19 +4,18 @@ function submitForm(event) {
   
   var poemText = document.getElementById('poem_text').value;
   var poemAuthor = document.getElementById('poem_author').value;
-
-  generateQrCode(poemText, poemAuthor)
-
+  var qrCodeSize = document.getElementById('qrcode-size').value;
+  generateQrCode(poemText, poemAuthor, qrCodeSize)
 }
 
 
-function generateQrCode(poemText, poemAuthor){
+function generateQrCode(poemText, poemAuthor, qrCodeSize){
   divId = document.getElementById("qrcode")
   divId.innerHTML = "" // resets div content before new generation
   var baseUrl = generateUrl()
   var urlWithParams = `${baseUrl}/index.html?poem=${poemText}&author=${poemAuthor}`.replaceAll(' ', '%20')
 
-  new QRCode(divId, { text: urlWithParams,  width: 248, height: 248});
+  new QRCode(divId, { text: urlWithParams,  width: qrCodeSize, height: qrCodeSize});
   document.getElementById("qrcode-url").innerHTML = "QR Code URL"
   document.getElementById("qrcode-url").href = urlWithParams
 }

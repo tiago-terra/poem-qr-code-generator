@@ -17,6 +17,13 @@
       <input type="text" id="poem_author" placeholder="Author">
       <textarea id="poem_text" class="h-32" placeholder="Enter Poem here"></textarea>
       <input type="text" id="image_url" placeholder="URL for image to display (optional)">
+      <input list="qrcode-sizes" id="qrcode-size" name="QrCodeSize" />
+      <datalist id="qrcode-sizes">
+        <option value="128">128px</option>
+        <option value="248">248px</option>
+        <option value="512">512px</option>
+        <option value="1024">1024px</option>
+      </datalist>
       <button type="submit" class="bg-white">Submit</button>
     </form>
     <div id="qr-response" class="flex border border-white flex-col mx-auto w-full bg-red-500">
