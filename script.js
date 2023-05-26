@@ -14,7 +14,7 @@ function generateQrCode(poemText, poemAuthor){
   var baseUrl = window.location.hostname
   divId = document.getElementById("qrcode")
   divId.innerHTML = "" // resets div content before new generation
-  var urlWithParams = `${baseUrl}:5500/2023/new/poem-qr-generator/index.html?poem=${poemText}&author=${poemAuthor}`
+  var urlWithParams = `${baseUrl}/index.html?poem=${poemText}&author=${poemAuthor}`
 
   new QRCode(divId, { text: urlWithParams,  width: 128, height: 128});
   console.log(urlWithParams)
