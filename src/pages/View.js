@@ -3,7 +3,7 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
 function View() {
-  const queryString = window.location.search;
+  const queryString = window.location.href;
   const urlParams = new URLSearchParams(queryString);
   const poemText = decodeURIComponent(urlParams.get("poem")).replace(/\\n/g, "\n");
   const poemLines = poemText.split("\n");
