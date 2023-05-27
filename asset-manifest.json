@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/poem-qr-code-generator/static/css/main.8f14e12c.css",
-    "main.js": "/poem-qr-code-generator/static/js/main.483bf32b.js",
+    "main.js": "/poem-qr-code-generator/static/js/main.c9049af1.js",
     "index.html": "/poem-qr-code-generator/index.html",
     "main.8f14e12c.css.map": "/poem-qr-code-generator/static/css/main.8f14e12c.css.map",
-    "main.483bf32b.js.map": "/poem-qr-code-generator/static/js/main.483bf32b.js.map"
+    "main.c9049af1.js.map": "/poem-qr-code-generator/static/js/main.c9049af1.js.map"
   },
   "entrypoints": [
     "static/css/main.8f14e12c.css",
-    "static/js/main.483bf32b.js"
+    "static/js/main.c9049af1.js"
   ]
 }
