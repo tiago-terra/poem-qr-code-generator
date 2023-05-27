@@ -1,0 +1,86 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+
+  h1 {
+    @apply sm:text-2xl text-xl font-bold
+  }
+
+  h2 {
+    @apply sm:text-2xl text-xl font-semibold
+  }
+
+  h3 {
+    @apply sm:text-xl text-lg font-semibold
+  }
+
+  label {
+    @apply text-white
+  }
+
+  p {
+    @apply text-base font-normal py-2
+  }
+
+  html {
+    @apply h-screen max-h-screen
+  }
+
+  body {
+    @apply bg-navy text-white h-full;
+  }
+
+  footer {
+    @apply justify-end text-center font-extralight text-xs py-8 h-full;
+  }
+
+  nav {
+    @apply  py-4 mx-auto flex flex-col font-bold max-w-screen-sm text-3xl sm:text-4xl
+  }
+
+  main {
+    @apply flex-1 flex flex-col h-full w-full mx-auto gap-4 p-6 max-w-screen-sm
+  }
+
+  form {
+    @apply flex flex-col gap-4 w-full mx-auto text-black text-xl  sm:max-w-sm
+  }
+
+  .form-header {
+    @apply   text-xl w-full sm:max-w-sm mx-auto
+  }
+
+
+
+
+
+  #root {
+    @apply  h-full w-full ;
+  }
+
+  .container-wrapper {
+    @apply  border border-white h-max min-h-full w-full flex flex-col
+  }
+
+  #form-result-code {
+    @apply w-fit flex-1 flex flex-col gap-4 h-full text-center border border-white mx-auto max-w-xl
+  }
+
+  #qr-code {
+    @apply max-w-6xl min-w-full h-full max-h-96
+  }
+
+  #form-result-url {
+    @apply w-full
+  }
+
+  #poem-text {
+    @apply min-h-full h-60
+  }
+
+  button {
+    @apply rounded-md
+  }
+}
