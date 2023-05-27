@@ -36,7 +36,7 @@ function Index() {
   const qrCodeEncoder = (e) => {
     e.preventDefault();
     let baseUrl = `${window.location.origin.toString()}`;
-    baseUrl = `${baseUrl}/?author=${encodeURIComponent(
+    baseUrl = `${baseUrl}/view?author=${encodeURIComponent(
       author
     )}&poem=${encodeURIComponent(poem)}`;
 
