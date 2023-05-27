@@ -8,7 +8,7 @@ import Index from './pages/Index';
 
 const Main = () => {
   return (
-    <HashRouter  basename="/"> 
+    <HashRouter  basename="/poem-qr-code-generator"> 
     <Routes>
       <Route exact path='/' element={ <Index/> }></Route>
       <Route exact path='/view' element={<View/>}></Route>
