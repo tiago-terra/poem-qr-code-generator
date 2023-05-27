@@ -1,5 +1,5 @@
 import React from 'react';
-import { HashRouter, Route, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 
  // eslint-disable-next-line
 import styles from "./index.css"
@@ -8,12 +8,10 @@ import Index from './pages/Index';
 
 const Main = () => {
   return (
-    <HashRouter  baseline="/"> 
     <Routes>
       <Route exact path='/' element={ <Index/> }></Route>
-      <Route exact path='/view' element={<View/>}></Route>
+      <Route path='/view' element={<View/>}></Route>
       </Routes>
-    </HashRouter>
   );
 }
 
