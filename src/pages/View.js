@@ -1,11 +1,12 @@
 import React from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import { useLocation } from 'react-router-dom';
 
 function View() {
-  const queryString = window.location.href;
-  const urlParams = new URLSearchParams(queryString);
-  const poemText = decodeURIComponent(urlParams.get("poem")).replace(/\\n/g, "\n");
+  const location = useLocation();
+  const searchParams = new URLSearchParams(location.search);
+  const poemText = decodeURIComponent(searchParams.get("poem")).replace(/\\n/g, "\n");
   const poemLines = poemText.split("\n");
 
   const poem = poemLines.length > 0 ? (
@@ -19,8 +20,8 @@ function View() {
     </div>
   ) : null;
 
-  const author = urlParams.get("author");
-  const title = urlParams.get("title");
+  const author = searchParams.get("author");
+  const title = searchParams.get("title");
 
   return (
     <div className="container-wrapper">
@@ -29,8 +30,8 @@ function View() {
         {poem || author ? (
           <div className=" flex-1 flex flex-col gap-4 mx-auto">
             {title && <h1 id="poem_title">{title}</h1>}
-            {poem}
-            {author && <div id="poem_author">- {author}</div>}
+            <div>{poem}</div>
+            <div id="poem_author">- {author}</div>
           </div>
         ) : null}
       </main>
@@ -38,7 +39,5 @@ function View() {
     </div>
   );
 }
-
-
 
 export default View;
