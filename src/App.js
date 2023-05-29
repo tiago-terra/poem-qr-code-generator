@@ -6,7 +6,7 @@ import styles from "./index.css"
 import View from './pages/View';
 import Index from './pages/Index';
 
-const Main = () => {
+const App = () => {
   return (
     <Routes>
       <Route exact path='/' element={ <Index/> }></Route>
@@ -15,4 +15,4 @@ const Main = () => {
   );
 }
 
-export default Main;
+export default App;
